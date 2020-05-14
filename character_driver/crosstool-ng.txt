@@ -1,0 +1,21 @@
+
+*************VERSION********************
+
+arm-unknown-linux-gnueabi-gcc (crosstool-NG 1.24.0) 8.3.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+***********CONFIGURATION****************
+Using built-in specs.
+COLLECT_GCC=arm-unknown-linux-gnueabi-gcc
+COLLECT_LTO_WRAPPER=/home/suraj/x-tools/arm-unknown-linux-gnueabi/libexec/gcc/arm-unknown-linux-gnueabi/8.3.0/lto-wrapper
+Target: arm-unknown-linux-gnueabi
+Configured with: /home/suraj/Documents/SPRING2020/APES/crosstool-ng/.build/arm-unknown-linux-gnueabi/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=arm-unknown-linux-gnueabi --prefix=/home/suraj/x-tools/arm-unknown-linux-gnueabi --with-sysroot=/home/suraj/x-tools/arm-unknown-linux-gnueabi/arm-unknown-linux-gnueabi/sysroot --enable-languages=c,c++ --with-float=soft --with-pkgversion='crosstool-NG 1.24.0' --disable-sjlj-exceptions --enable-__cxa_atexit --disable-libmudflap --disable-libgomp --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-libsanitizer --disable-libmpx --with-gmp=/home/suraj/Documents/SPRING2020/APES/crosstool-ng/.build/arm-unknown-linux-gnueabi/buildtools --with-mpfr=/home/suraj/Documents/SPRING2020/APES/crosstool-ng/.build/arm-unknown-linux-gnueabi/buildtools --with-mpc=/home/suraj/Documents/SPRING2020/APES/crosstool-ng/.build/arm-unknown-linux-gnueabi/buildtools --with-isl=/home/suraj/Documents/SPRING2020/APES/crosstool-ng/.build/arm-unknown-linux-gnueabi/buildtools --enable-lto --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-threads=posix --enable-target-optspace --enable-plugin --enable-gold --disable-nls --disable-multilib --with-local-prefix=/home/suraj/x-tools/arm-unknown-linux-gnueabi/arm-unknown-linux-gnueabi/sysroot --enable-long-long
+Thread model: posix
+gcc version 8.3.0 (crosstool-NG 1.24.0) 
+
+
+**********SYSROOT PATH*******************
+/home/suraj/x-tools/arm-unknown-linux-gnueabi/arm-unknown-linux-gnueabi/sysroot
