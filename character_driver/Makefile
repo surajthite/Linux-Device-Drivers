@@ -1,24 +1,30 @@
-ifeq ($(CC),)
-	  CC = $(CROSS_COMPILE)gcc
+# See example Makefile from scull project
+# Comment/uncomment the following line to disable/enable debugging
+#DEBUG = y
+
+# Add your debugging flag (or not) to CFLAGS
+ifeq ($(DEBUG),y)
+  DEBFLAGS = -O -g -DSCULL_DEBUG # "-O" is needed to expand inlines
+else
+  DEBFLAGS = -O2
 endif
 
-ifeq ($(CFLAGS),)
-	 CFLAGS = -g -Wall -Werror
+EXTRA_CFLAGS += $(DEBFLAGS)
+
+ifneq ($(KERNELRELEASE),)
+# call from kernel build system
+obj-m	:= aesdchar.o
+aesdchar-y := aesd-circular-buffer.o main.o
+else
+
+KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+PWD       := $(shell pwd)
+
+modules:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+
 endif
 
-ifeq ($(LDFLAGS),)
-	LDFLAGS = -pthread -lrt
-endif
+clean:
+	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions
 
-all: writer
-	+$(MAKE) -C server 
-
-writer: writer.c
-	$(CC) $(CFLAGS) $(INCLUDES) writer.c -o writer $(LDFLAGS)
-
-# writer.o: writer.c
-# 	$(CROSS_COMPILE)$(CC) $(CFLAGS) -c -o writer.o writer.c
-
-clean:	
-	rm -rf *o writer
-	rm  -rf ./server/aesdsocket.o ./server/aesdsocket 
